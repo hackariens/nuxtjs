@@ -27,6 +27,4 @@ services:
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.nuxtjs.rule=HostRegexp(`nuxtjs.traefik.me`, `nuxtjs.{ip:.*}.traefik.me`)"
-        - "traefik.http.routers.nuxtjs-tls.tls.domains[0].main=nuxtjs.traefik.me"
-        - "traefik.http.routers.nuxtjs-tls.tls.domains[0].sans=nuxtjs-*.traefik.me"
         - "traefik.http.services.nuxtjs.loadbalancer.server.port=4200"
