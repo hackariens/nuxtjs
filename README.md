@@ -30,6 +30,14 @@ Hosts:
 
 - nuxtjs.traefik.me
 
+## Download
+
+```sh
+git clone git@github.com:koromerzhin/template-nuxtjs.git template-nuxtjs
+cd template-nuxtjs
+git submodule update --init
+```
+
 ## Install
 
 ``` sh
