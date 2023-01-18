@@ -6,7 +6,6 @@ services:
  www:
     networks:
       - proxylampy
-      - net
     deploy:
       labels:
         - "traefik.enable=true"
