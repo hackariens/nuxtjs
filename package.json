@@ -24,6 +24,6 @@
   "homepage": "https://github.com/hackariens/nuxtjs#readme",
   "dependencies": {
     "create-nuxt-app": "^5.0.0",
-    "korojscommands": "^1.2.13"
+    "korojscommands": "^1.2.14"
   }
 }
