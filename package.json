@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Templates pour la création d'un nouveau projet nuxtjs",
   "scripts": {
-    "create:apps": "npx create-nuxt-app apps",
+    "create:apps": "create-nuxt-app apps --answers '{\"name\":\"apps\",\"language\":\"ts\",\"pm\":\"npm\",\"ui\":\"tailwind\",\"template\":\"pug\",\"features\":[\"axios\",\"pwa\",\"content\"],\"linter\":[],\"test\":\"jest\",\"mode\":\"spa\",\"target\":\"static\",\"devTools\":[\"jsconfig.json\",\"semantic-pull-requests\"],\"ci\":\"none\",\"vcs\":\"none\"}'",
     "docker:deploy": "korojscommands docker_deploy",
     "docker:getpull-image": "korojscommands docker_getpull-image",
     "docker:ls": "korojscommands docker_ls",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/hackariens/nuxtjs#readme",
   "dependencies": {
+    "create-nuxt-app": "^5.0.0",
     "korojscommands": "^1.2.13"
   }
 }
