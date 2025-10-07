@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/hackariens/nuxtjs#readme",
   "dependencies": {
-    "create-nuxt-app": "^5.0.0"
+    "create-nuxt-app": "^6.0.0"
   },
   "devDependencies": {
     "all-contributors-cli": "^6.26.1",
