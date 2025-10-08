@@ -42,6 +42,7 @@ tasks:
   help:
     desc: "Affiche l'aide détaillée"
     aliases: [ h ]
+    silent: true
     cmds:
     - task: default
 
@@ -83,35 +84,36 @@ tasks:
     silent: true
     desc: "Crée une nouvelle application nuxtjs dans le dossier apps"
     cmds:
-      - rm -rf apps
-      - NUXT_TELEMETRY_DISABLED=1 echo "y" | npx -y create-nuxt-app@latest apps --packageManager npm --language ts --ui none --features none --modules none --gitInit false --ci
-      - |
-        # Ajouter la configuration vite.server.allowedHosts dans nuxt.config.ts
-        node -e "
-        const fs = require('fs');
-        const path = 'apps/nuxt.config.ts';
-        let content = fs.readFileSync(path, 'utf8');
-        
-        // Si vite n'existe pas déjà, l'ajouter
-        if (!content.includes('vite:')) {
-          // Trouver la position avant la fermeture finale
-          content = content.replace(
-            /(\s*}\)\s*$)/,
-            ',\n  vite: {\n    server: {\n      allowedHosts: [\"{{.SERVERNAME}}\"]\n    }\n  }\n})'
-          );
-        }
-        
-        // S'assurer que le fichier se termine correctement
-        if (!content.trim().endsWith('})')) {
-          content = content.replace(/(\s*)$/, '\n})$1');
-        }
-        
-        fs.writeFileSync(path, content);
-        console.log('Configuration mise à jour avec succès');
-        "
+    - rm -rf apps
+    - NUXT_TELEMETRY_DISABLED=1 echo "y" | npx -y create-nuxt-app@latest apps --packageManager npm --language ts --ui none --features none --modules none --gitInit false --ci
+    - |
+      # Ajouter la configuration vite.server.allowedHosts dans nuxt.config.ts
+      node -e "
+      const fs = require('fs');
+      const path = 'apps/nuxt.config.ts';
+      let content = fs.readFileSync(path, 'utf8');
+
+      // Si vite n'existe pas déjà, l'ajouter
+      if (!content.includes('vite:')) {
+        // Trouver la position avant la fermeture finale
+        content = content.replace(
+          /(\s*}\)\s*$)/,
+          ',\n  vite: {\n    server: {\n      allowedHosts: [\"{{.SERVERNAME}}\"]\n    }\n  }\n})'
+        );
+      }
+
+      // S'assurer que le fichier se termine correctement
+      if (!content.trim().endsWith('})')) {
+        content = content.replace(/(\s*)$/, '\n})$1');
+      }
+
+      fs.writeFileSync(path, content);
+      console.log('Configuration mise à jour avec succès');
+      "
 
   nuxtjs:exec:
     desc: "Exécute une commande dans un conteneur en cours d'exécution"
+    silent: true
     cmds:
     - task: nuxtjs:getpull-image
     - task: create:apps
@@ -121,6 +123,7 @@ tasks:
 
   nuxtjs:bash:
     desc: "Ouvre un shell bash dans le conteneur www"
+    silent: true
     cmds:
     - task: docker:stack:shell
       vars:
