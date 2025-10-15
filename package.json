@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "description": "Templates pour la création d'un nouveau projet nuxtjs",
   "scripts": {
-    "docker:deploy": "korojscommands docker_deploy",
-    "docker:getpull-image": "korojscommands docker_getpull-image",
-    "docker:ls": "korojscommands docker_ls",
-    "docker:waiting": "korojscommands docker_waiting --status running --container www",
-    "exec": "npm-run-all docker:getpull-image docker:deploy docker:waiting docker:ls",
-    "lint:markdown": "markdownlint README.md"
+    "create:apps": "create-nuxt-app apps --answers '{\"name\":\"apps\",\"language\":\"ts\",\"pm\":\"npm\",\"ui\":\"tailwind\",\"template\":\"pug\",\"features\":[\"axios\",\"pwa\",\"content\"],\"linter\":[],\"test\":\"jest\",\"mode\":\"spa\",\"target\":\"static\",\"devTools\":[\"jsconfig.json\",\"semantic-pull-requests\"],\"ci\":\"none\",\"vcs\":\"none\"}'",
+    "lint:markdown": "markdownlint README.md",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -22,6 +19,14 @@
   },
   "homepage": "https://github.com/hackariens/nuxtjs#readme",
   "dependencies": {
-    "korojscommands": "^1.2.7"
+    "create-nuxt-app": "^6.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^15.3.0",
+    "jscpd": "^4.0.5",
+    "markdownlint-cli": "^0.45.0",
+    "npm-run-all": "^4.1.5",
+    "release-it": "^19.0.5",
+    "yaml": "^2.8.1"
   }
 }
