@@ -1,6 +1,6 @@
 {
   "name": "@hackariens/nuxtjs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Templates pour la création d'un nouveau projet nuxtjs",
   "scripts": {
     "create:apps": "create-nuxt-app apps --answers '{\"name\":\"apps\",\"language\":\"ts\",\"pm\":\"npm\",\"ui\":\"tailwind\",\"template\":\"pug\",\"features\":[\"axios\",\"pwa\",\"content\"],\"linter\":[],\"test\":\"jest\",\"mode\":\"spa\",\"target\":\"static\",\"devTools\":[\"jsconfig.json\",\"semantic-pull-requests\"],\"ci\":\"none\",\"vcs\":\"none\"}'",
