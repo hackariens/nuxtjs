@@ -17,7 +17,7 @@ vars:
   ENVIRONMENT: '{{.ENVIRONMENT | default "development"}}'
   STACK_NAME: '{{.STACK | default "nuxtjs"}}'
   SERVERNAME: '{{.SERVERNAME | default "nuxtjs.traefik.me"}}'
-  DOCKERCOMPOSEFILE: '{{.DOCKERCOMPOSEFILE | default "docker-compose.yml"}}'
+  DOCKERCOMPOSEFILE: '{{.DOCKERCOMPOSEFILE | default "docker-compose-lampy.yml"}}'
 
 tasks:
   default:
