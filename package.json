@@ -20,9 +20,9 @@
     "create-nuxt-app": "6.0.*"
   },
   "devDependencies": {
-    "cypress": "15.5.*",
-    "dotenv": "17.2.*",
+    "cypress": "15.11.*",
+    "dotenv": "17.3.*",
     "jscpd": "4.0.*",
-    "release-it": "19.0.*"
+    "release-it": "19.2.*"
   }
 }
